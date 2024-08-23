@@ -2,11 +2,11 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Game {
-	
+
 	public static int allowedGuesses = 8;
-	
+
 	public static void main(String[] args) {
-		
+
 		String[] words = { "computer", "java", "coding", "bytes" };
 
 		System.out.println("Welcome to Hangman! Guess the word");
@@ -20,7 +20,6 @@ public class Game {
 
 		Scanner input = new Scanner(System.in);
 		int attempts = 0;
-		int match = 0;
 		for (int i = 0; i < allowedGuesses; i++) {
 
 			System.out.println("(Guess) Enter a letter in this word " + newWord);
@@ -43,6 +42,7 @@ public class Game {
 			}
 
 		}
+		input.close();
 
 	}
 
@@ -111,6 +111,7 @@ public class Game {
 		} else if (check == true) {
 			System.out.println("Good job!");
 		} else {
+
 			return;
 		}
 
