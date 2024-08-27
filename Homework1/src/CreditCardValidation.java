@@ -4,7 +4,7 @@ import java.util.Scanner;
 //Credit card algorithm (Hans Luhn)
 //valid 4388576018410707
 //not valid 4388576018402626
-public class Assignment1 {
+public class CreditCardValidation {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
