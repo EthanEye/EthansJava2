@@ -16,9 +16,8 @@ public class CreditCardValidation {
 				String cardString = cardNum.toString();
 
 				if (cardString.length() == 16) {
-					int sum = sumOfDoubleEvenPlace(cardNum);
-					int oddSum = sumOfOddPlace(cardNum);
-					System.out.println(isValid(sum, oddSum));
+					
+					System.out.println(isValid(cardNum));
 					break;
 				} else {
 					System.out.println("Must be 16 digits...");
@@ -87,7 +86,9 @@ public class CreditCardValidation {
 		return oddSum;
 	}
 
-	private static String isValid(int sum, int oddSum) {
+	private static String isValid(long cardNum) {
+		int sum = sumOfDoubleEvenPlace(cardNum);
+		int oddSum = sumOfOddPlace(cardNum);
 		String valid = null;
 
 		if ((sum + oddSum) % 10 == 0) {
