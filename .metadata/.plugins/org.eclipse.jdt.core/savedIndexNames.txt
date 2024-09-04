@@ -1,13 +1,10 @@
-INDEX VERSION 1.134+C:\Users\S02584355\CSC1061EEye\EthansJava2\.metadata\.plugins\org.eclipse.jdt.core
-1865797976.index
-<<<<<<< HEAD
+INDEX VERSION 1.134+C:\Users\ethan\CSC1061Fall24EEye\.metadata\.plugins\org.eclipse.jdt.core
 1608527286.index
-2197543496.index
-1197309366.index
-=======
-2535856337.index
-2197543496.index
 913210262.index
+125398772.index
+3048885576.index
 1657330681.index
+1865797976.index
 3321337437.index
->>>>>>> 78d6d69d183adbbd0939e4cb5d4a5e9eacea7029
+2197543496.index
+2942773804.index

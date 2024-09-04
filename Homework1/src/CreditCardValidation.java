@@ -16,10 +16,7 @@ public class CreditCardValidation {
 				String cardString = cardNum.toString();
 
 				if (cardString.length() == 16) {
-<<<<<<< HEAD
-					
-=======
->>>>>>> 78d6d69d183adbbd0939e4cb5d4a5e9eacea7029
+
 					System.out.println(isValid(cardNum));
 					break;
 				} else {
