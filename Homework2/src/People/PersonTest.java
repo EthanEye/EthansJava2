@@ -30,7 +30,7 @@ private void checkPerson(Person given, String firstName, String lastName,
 	boolean OK = true;
 
 	/* Accumulate the start of the toString value expected. */
-	String str1 = given.getFirst();
+	String str1 = given.getClass().getName();
 	/* Identify what can be identified of the person. */
 	out.print("**Checking the nominal person ");
 	out.print(firstName == null ? "<null>" :
@@ -120,16 +120,13 @@ private void checkPerson(Person given, String firstName, String lastName,
 	given.displayValues();
 
 	/* Print message only if the toString values to not match. */
-//	if( str2 != null &&!(firstName + " " + lastName + " " + age).equals(given.toString()) )
-//		
-//				out.println("**?? toString value \"" + given.toString() +
-//						"\" incorrect");
-//	System.out.println("_________________________________________________");
-//	System.out.println(str2);
-//	System.out.println(firstName + " " + lastName + " " + age);
-//	System.out.println(given.toString());
-//	System.out.println("_________________________________________________");
-//????????????
+	//given is an object of type employee being passed to check employee
+	if( str2 != null &&!(str1 + "\u0020" + firstName +" " + lastName).equals(given.toString()) )
+		
+				out.println("**?? toString value \"" + given.toString() +
+						"\" incorrect");
+
+
 }
 
 /**

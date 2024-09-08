@@ -6,5 +6,11 @@
     <fullyQualifiedTypeName name="java.lang.Thread"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.util.regex.Pattern"/>
+    <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="org.apache.pdfbox.pdmodel.PDDocument"/>
+    <fullyQualifiedTypeName name="org.apache.pdfbox.text.PDFTextStripper"/>
+    <fullyQualifiedTypeName name="org.apache.pdfbox.Loader"/>
+    <fullyQualifiedTypeName name="java.lang.Character"/>
 </qualifiedTypeNameHistroy>

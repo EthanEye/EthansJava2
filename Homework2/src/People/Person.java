@@ -91,13 +91,18 @@ private double ageField = 0;
  */
 public Person(String firstName, String lastName, double initialAge)
 {
+
 	if(firstName == null || firstName.equals("")) {
 		this.firstNameField = null;
 		
 	}else {
 		this.firstNameField = firstName;
 	}
-	this.lastNameField = lastName;
+	if(lastName == null || lastName.equals("")) {
+		this.lastNameField = null;
+	}else {
+		this.lastNameField = lastName;
+	}
 	if(initialAge < 0) {
 		this.ageField = 0;
 		
@@ -172,7 +177,7 @@ public void setAge(double ageField) {
 public String toString() {
 
 	
-	return this.firstNameField + " " + this.lastNameField + " " + this.ageField;
+	return super.toString() + "\u0020" + this.firstNameField +" " + lastNameField;
 
 }
 
