@@ -13,4 +13,6 @@
     <fullyQualifiedTypeName name="org.apache.pdfbox.text.PDFTextStripper"/>
     <fullyQualifiedTypeName name="org.apache.pdfbox.Loader"/>
     <fullyQualifiedTypeName name="java.lang.Character"/>
+    <fullyQualifiedTypeName name="InheritanceAndPolymorphism.SalariedEmployee"/>
+    <fullyQualifiedTypeName name="InheritanceAndPolymorphism.HourlyEmployee"/>
 </qualifiedTypeNameHistroy>

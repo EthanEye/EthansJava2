@@ -52,6 +52,14 @@ public class Employee extends Payable
    {
       return socialSecurityNumber;
    } // end method getSocialSecurityNumber
+   @Override
+   double getPaymentAmount() {
+       Class c = getClass();
+       
+       System.out.printf("%s must override method getPaymentAmount()/n", c.getName());
+       
+       return 0;
+   }
 
    // return String representation of Employee object
    @Override

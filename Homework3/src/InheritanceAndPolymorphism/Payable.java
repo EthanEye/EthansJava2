@@ -3,8 +3,9 @@ package InheritanceAndPolymorphism;
 // Payable.java
 // Payable interface declaration.
 
-public  class Payable 
+public class Payable 
 {    
+	
    double getPaymentAmount() {
        Class c = getClass();
        
@@ -12,5 +13,9 @@ public  class Payable
        
        return 0;
    }
+
+
+   
+   
 }
 

@@ -67,7 +67,11 @@ public class HourlyEmployee extends Employee
          return 40 * getWage() + (getHours() - 40) * getWage() * 1.5;
    }                                          
 
-   // return String representation of HourlyEmployee object              
+   // return String representation of HourlyEmployee object    
+   public double getPaymentAmount()
+   {
+      return this.hours;
+   } // end method getPaymentAmount
    @Override                                                             
    public String toString()                                              
    {                                                                     

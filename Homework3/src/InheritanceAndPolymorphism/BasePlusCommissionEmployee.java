@@ -35,6 +35,7 @@ public class BasePlusCommissionEmployee extends CommissionEmployee
    {
       return baseSalary;
    }
+   
 
    // calculate earnings; override method earnings in CommissionEmployee
    @Override                                                            
@@ -42,7 +43,10 @@ public class BasePlusCommissionEmployee extends CommissionEmployee
    {                                                                    
       return getBaseSalary() + super.earnings();                        
    } 
-
+   public double getPaymentAmount()
+   {
+      return this.baseSalary;
+   }
    // return String representation of BasePlusCommissionEmployee object
    @Override                                                           
    public String toString()                                            

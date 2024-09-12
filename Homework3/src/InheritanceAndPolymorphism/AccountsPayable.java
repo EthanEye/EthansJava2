@@ -11,7 +11,11 @@ public class AccountsPayable
       Payable[] payableObjects = new Payable[4];
       
       // populate array with objects that implement Payable
-
+      
+      payableObjects[0] = new SalariedEmployee("John", "Smith", "111-11-1111", 800.00);
+      payableObjects[1] = new HourlyEmployee ("Karen", "Price", "222-22-2222", 16.75, 40);
+      payableObjects[2] = new CommissionEmployee("Sue", "Jones", "333-33-3333", 10000, .06);
+      payableObjects[3] = new BasePlusCommissionEmployee("Bob", "Lewis", "444-44-4444", 5000, .04, 300);
 
       System.out.println(
          "Invoices and Employees processed polymorphically:\n"); 
@@ -19,6 +23,7 @@ public class AccountsPayable
       // generically process each element in array payableObjects
       for (Payable currentPayable : payableObjects)
       {
+    	 
          // output currentPayable and its appropriate payment amount
          System.out.printf("%s \n", currentPayable.toString()); 
          

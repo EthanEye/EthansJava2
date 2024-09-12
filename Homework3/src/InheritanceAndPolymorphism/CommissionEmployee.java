@@ -57,11 +57,15 @@ public class CommissionEmployee extends Employee
       return commissionRate;
    } 
 
-   // calculate earnings;                                                         
    public double earnings()                                            
    {                                                                   
       return getCommissionRate() * getGrossSales();                    
-   }                                             
+   }    
+   
+   public double getPaymentAmount()
+   {
+      return this.commissionRate * grossSales;
+   }
 
    // return String representation of CommissionEmployee object
    @Override                                                   
