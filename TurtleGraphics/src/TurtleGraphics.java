@@ -7,6 +7,8 @@ import java.util.Scanner;
  * @author Deitel 10e chapter 7
  * @version CSC160 CSC 1 2020 Robert Gilanyi, Instructor
  */
+
+//swiss cross 5,10 3 1 5,20 2 3 5,10 3 5,10 3 1 5,20 6 9
 public class TurtleGraphics {
 	private static final int SIZE = 20; // size of the drawing area
 	private static int[][] floor; // array representing the floor
@@ -33,12 +35,9 @@ public class TurtleGraphics {
 	public int enterCommands(int[][] cmnds) {
 		int count = 0; // the current number of commands
 		Scanner input = new Scanner(System.in);
-//		input.useDelimiter("[,\\s]+");
-//		while (input.hasNext()) {
-//            String token = input.next();
-//            System.out.println("Token: " + token);
-//        }
-//	
+
+		input.useDelimiter("\\p{javaWhitespace}+" + "|,|\n");
+	
 		floor = new int[SIZE][SIZE];
 
 		System.out.print("Enter command (9 to end input): ");
@@ -63,10 +62,10 @@ public class TurtleGraphics {
 	// executes the commands in the command array
 	public boolean executeCommands(int[][] cmnds, int count) {
 		int commandNumber = 0; // the current position in the array
-		int direction = 2; // the direction the turtle is facing // 1 is up right 2 down is 3 and 4 is left
+		int direction = 1; // the direction the turtle is facing // 0 is up right 1 down is 2 and 3 is left
 		int distance = 0; // the distance the turtle will travel
 		int command; // the current command
-		boolean penDown = true; // whether the pen is up or down
+		boolean penDown = false; // whether the pen is up or down
 		xPos = 0;
 		yPos = 0;
 
@@ -75,6 +74,7 @@ public class TurtleGraphics {
 		// continue executing commands until either reach the end
 		// or reach the max commands
 		while (commandNumber < count) {
+			
 			// System.out.println("Executing...");
 			// determine what command was entered
 			// and perform desired action
@@ -97,14 +97,32 @@ public class TurtleGraphics {
 				break;
 			case 5: // move
 				distance = cmnds[commandNumber][1];
+				
+				
 			
-				if (distance + xPos > 20 || distance + xPos < 0 || distance + yPos > 20 || distance + yPos < 0) { // set
-																											// bounds
-					System.err.println("Distance Out of bounds");
-					break;
-				}
+//				if (distance + xPos > 20 || distance + xPos < 0 || distance + yPos > 20 || distance + yPos < 0) { // set
+//							System.err.println(distance + xPos);
+//							System.err.println(distance + yPos);// bounds
+//					System.err.println("Distance Out of bounds");
+//					break;
+//				}
 				movePen(penDown, floor, direction, distance);
-				System.out.println("Move towards Direction: " + direction + " Distance: " + distance);
+				String dir = "";
+				if(direction == 0) {
+					dir = "Up";
+				}else if(direction == 1){
+					dir = "Right";
+					
+				}else if(direction == 2) {
+					dir = "Down";
+					
+				}else if(direction == 3) {
+					dir = "Left";
+					
+				}
+					
+//				
+//				System.out.println("Move towards Direction: " + dir + " Distance: " + distance);
 				break;
 			case 6: // display the drawing
 				System.out.println("\nThe drawing is:\n");
@@ -124,21 +142,21 @@ public class TurtleGraphics {
 		String direction = "";
 		// To be completed by student.
 		d++;
-		if (d > 4) {
-			d = 1;
+		if (d > 3) {
+			d = 0;
 
 		}
 		switch (d) {
-		case 1:
+		case 0:
 			direction = "Up";
 			break;
-		case 2:
+		case 1:
 			direction = "Right";
 			break;
-		case 3:
+		case 2:
 			direction = "Down";
 			break;
-		case 4:
+		case 3:
 			direction = "Left";
 			break;
 		default:
@@ -156,28 +174,28 @@ public class TurtleGraphics {
 		String direction = "";
 		// To be completed by student.
 		d--;
-		if (d < 1) {
-			d = 4;
+		if (d < 0) {
+			d = 3;
 		}
 
 		switch (d) {
-		case 1:
+		case 0:
 			direction = "Up";
 			break;
-		case 2:
+		case 1:
 			direction = "Right";
 			break;
-		case 3:
+		case 2:
 			direction = "Down";
 			break;
-		case 4:
+		case 3:
 			direction = "Left";
 			break;
 		default:
 			direction = "";
 		}
 
-		System.out.println(direction);
+	
 
 		return d;
 	}
@@ -188,25 +206,36 @@ public class TurtleGraphics {
 
 		// determine which way to move pen
 		switch (dir) {
-		case 1: // move up
-			for (j = 1; j <= dist && xPos - j >= 0; ++j)
-				if (down)
-					a[xPos - j][yPos] = 1;
-
-			xPos -= j - 1;
-
+		case 0: // move up
+			
+			for (j = 1; j <= dist && yPos - j >= 0; ++j) {
+	            if (down) {
+	                a[yPos - j][xPos] = 1; // Mark the path as 1
+	              
+	            }
+			}
+//			
+			
+			yPos -= j - 1;
+			
 			break;
 
-		case 2: // move right
+		case 1: // move right
+			
+		
 			// To be completed by student.
-			for (j = 1; j <= dist && xPos + j < SIZE; ++j)
+			for (j = 1; j <= dist && xPos + j < SIZE; ++j) {
 				if (down)
-					a[xPos][yPos + j] = 1;
-
-			xPos += j - 1;
+					a[yPos][xPos + j] = 1;
+			
+				
+			}
+				
+			xPos = xPos + j - 1;
 			break;
 
-		case 3: // move to down
+		case 2: // move to down
+		
 			// To be completed by student.
 
 			for (j = 1; j <= dist && yPos + j < SIZE; ++j) {
@@ -218,20 +247,23 @@ public class TurtleGraphics {
 
 			break;
 
-		case 4: // left
-			System.err.println("Left");
+		case 3: // left
+		
+		
+			
 			for (j = 1; j <= dist && yPos - j >= 0; ++j) {
+				
 				if (down) // Check the direction to move left
-					a[xPos][yPos - j] = 1; // Move left by decreasing yPos
-				System.err.println("Drawing at: (" + xPos + ", " + (yPos - j) + ")");
+					a[yPos][xPos - j] = 1; // Move left by decreasing yPos
+//				System.err.println("Drawing at: (" + xPos + ", " + (yPos - j) + ")");
 			}
 
 			// Update yPos to the new position after moving left
-			yPos -= j - 1;
+			xPos -= j - 1;
 			break;
 
 		}
-		System.out.println("Updated position " + xPos + " " + yPos);
+		
 	}
 
 	// method to print array drawing
@@ -239,6 +271,7 @@ public class TurtleGraphics {
 
 //	   a[10][4] = 1;
 		// display array
+		System.out.println("Display array");
 		for (int i = 0; i < a.length; i++) { // Outer loop for rows
 			for (int j = 0; j < a[i].length; j++) { // Inner loop for columns
 				System.out.print(a[i][j] + " ");
