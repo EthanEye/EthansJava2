@@ -1,0 +1,8 @@
+Value of "1234" is 1234 
+Value of "921" is 921 
+Value of "0" is 0 
+Value of "0034" is 34 
+Value of "-4" is -26 
+Value of "-400001" is -2599999 
+Value of "ABC" is 1899 
+test
